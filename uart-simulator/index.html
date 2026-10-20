@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hardware UART & SHA-1 Cryptographic Accelerator Visualizer | Kshitij Garg</title>
+  <title>Hardware UART & SHA-1 Cryptographic Accelerator Visualizer</title>
   <meta name="description" content="Synthesizable Verilog HDL UART transceiver & 80-round SHA-1 cryptographic hardware accelerator visualizer.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22 width=%2232%22 height=%2232%22><text y=%2224%22 font-size=%2222%22>⚡</text></svg>">
   <link rel="stylesheet" href="../styles.css">
   <style>
     body {
-      padding-top: 2rem;
-      background: radial-gradient(circle at 50% 20%, #312e81 0%, #07090e 80%);
+      padding: 1.5rem 0 3rem;
+      background: radial-gradient(circle at 50% 20%, #312e81 0%, #06080d 80%);
     }
-    .back-bar {
+    .back-nav-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 1.5rem;
-      padding: 0.75rem 1.25rem;
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid var(--border-subtle);
+      padding: 0.65rem 1.25rem;
+      background: rgba(13, 17, 24, 0.85);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
       backdrop-filter: blur(12px);
     }
@@ -26,47 +27,39 @@
 </head>
 <body>
   <div class="container" style="max-width: 1200px;">
-    <div class="back-bar">
-      <a href="../#uart" style="font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-        <span>←</span> Back to Unified Executive Portfolio Hub
+    <div class="back-nav-bar">
+      <a href="../#uart" style="font-weight: 700; font-size: 0.88rem; display: flex; align-items: center; gap: 0.5rem;">
+        <span>←</span> Back to Live Apps Showcase
       </a>
-      <div style="font-size: 0.85rem; color: #94a3b8;">
+      <div style="font-size: 0.8rem; color: #94a3b8;">
         Synthesizable Verilog HDL &bull; FPGA / ASIC Cryptographic Visualizer
       </div>
     </div>
 
-    <!-- Active UART Panel -->
-    <div id="tab-uart" class="app-panel active" style="display: block;">
-      <div class="app-panel-header">
-        <div class="app-title-group">
-          <h3>
-            <span>⚡</span>
-            <span>Hardware UART & SHA-1 Cryptographic Accelerator Visualizer</span>
-          </h3>
-          <p>
-            Synthesizable Verilog HDL hardware core designed for FPGA / ASIC integration. Features a 16x oversampled UART transceiver linked directly to an 80-round pipelined SHA-1 hashing coprocessor running at 100 MHz.
-          </p>
+    <div id="panel-uart" class="app-view-panel active" style="display: block;">
+      <div class="panel-toolbar">
+        <div class="panel-title">
+          <h2><span>⚡</span> Hardware UART & SHA-1 Cryptographic Accelerator Visualizer</h2>
+          <p>Synthesizable Verilog HDL core with 16x oversampled UART transceiver and 80-round SHA-1 hardware coprocessor.</p>
         </div>
-        <div class="app-panel-actions">
+        <div class="panel-actions">
           <a href="https://github.com/kshitij-garg/UART-Verilog" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-            View Verilog HDL Source & Testbenches ↗
+            Verilog Source & Testbenches ↗
           </a>
         </div>
       </div>
 
-      <div class="uart-canvas-container">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.75rem;">
-          <div style="display: flex; align-items: center; gap: 0.75rem;">
-            <span style="font-weight: 700; font-size: 0.88rem;">Oscilloscope Digital Waveform (Physical RS-232 Bitstream)</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <input type="text" id="uart-input-msg" value="KSHITIJ_TPM_2026" style="background: rgba(255,255,255,0.08); border: 1px solid var(--border-subtle); color: #ffffff; padding: 4px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.8rem; width: 160px;">
-            <select id="uart-baud-select" style="background: #1e293b; color: #ffffff; border: 1px solid var(--border-subtle); padding: 4px 6px; border-radius: 4px; font-size: 0.78rem;">
+      <div class="uart-oscilloscope-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+          <span style="font-weight: 700; font-size: 0.85rem;">Digital Oscilloscope Waveform (RS-232 Physical Bitstream)</span>
+          <div style="display: flex; gap: 0.4rem; align-items: center;">
+            <input type="text" id="uart-text-input" value="KSHITIJ_TPM_2026" style="background: rgba(255,255,255,0.08); border: 1px solid var(--border-color); color: #ffffff; padding: 3px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.78rem;">
+            <select id="uart-baud" style="background: #1e293b; color: #ffffff; border: 1px solid var(--border-color); padding: 3px 6px; border-radius: 4px; font-size: 0.75rem;">
               <option value="9600">9600 Baud</option>
               <option value="115200" selected>115200 Baud</option>
               <option value="921600">921600 Baud</option>
             </select>
-            <select id="uart-parity-select" style="background: #1e293b; color: #ffffff; border: 1px solid var(--border-subtle); padding: 4px 6px; border-radius: 4px; font-size: 0.78rem;">
+            <select id="uart-parity" style="background: #1e293b; color: #ffffff; border: 1px solid var(--border-color); padding: 3px 6px; border-radius: 4px; font-size: 0.75rem;">
               <option value="None" selected>Parity: None</option>
               <option value="Even">Parity: Even</option>
               <option value="Odd">Parity: Odd</option>
@@ -74,69 +67,67 @@
           </div>
         </div>
 
-        <canvas id="uart-waveform-canvas" class="waveform-canvas"></canvas>
+        <canvas id="uart-canvas" class="uart-wave-canvas"></canvas>
       </div>
 
-      <!-- FSM Flow -->
-      <div style="margin-top: 1.5rem;">
+      <!-- FSM Tracker -->
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-weight: 700; font-size: 0.82rem;">UART Receiver Finite State Machine (FSM)</span>
+        <button id="btn-fsm-step" class="btn btn-primary btn-sm">CLK Step (Next State) ▶</button>
+      </div>
+
+      <div class="fsm-pipeline-bar">
+        <div class="fsm-step-pill active">IDLE</div>
+        <span>➔</span>
+        <div class="fsm-step-pill">START_DETECT</div>
+        <span>➔</span>
+        <div class="fsm-step-pill">SAMPLE_MID</div>
+        <span>➔</span>
+        <div class="fsm-step-pill">DESERIALIZE</div>
+        <span>➔</span>
+        <div class="fsm-step-pill">PARITY_CHECK</div>
+        <span>➔</span>
+        <div class="fsm-step-pill">FIFO_WRITE</div>
+        <span>➔</span>
+        <div class="fsm-step-pill">DONE</div>
+      </div>
+      <div id="fsm-desc" style="font-family: var(--font-mono); font-size: 0.72rem; color: #00e5ff; margin-bottom: 1.5rem;">
+        IDLE: RX line high, waiting for start bit
+      </div>
+
+      <!-- SHA-1 Pipeline Output -->
+      <div style="background: rgba(13,17,24,0.6); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem;">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-          <span style="font-size: 0.85rem; font-weight: 700;">UART RX Finite State Machine (FSM) & Clock Tracker</span>
-          <button id="btn-fsm-step" class="btn btn-primary btn-sm">CLK Step (Next State) ▶</button>
+          <span style="font-weight: 700; font-size: 0.88rem;">SHA-1 Cryptographic Pipeline (Live 160-bit Hardware Digest)</span>
+          <span style="font-size: 0.72rem; color: #10b981; font-family: var(--font-mono);">100 MHz Clock &bull; 82 Cycles/Block</span>
         </div>
 
-        <div class="fsm-state-flow">
-          <div class="fsm-node active-state">IDLE</div>
-          <span class="fsm-arrow">➔</span>
-          <div class="fsm-node">START_DETECT</div>
-          <span class="fsm-arrow">➔</span>
-          <div class="fsm-node">SAMPLE_MID</div>
-          <span class="fsm-arrow">➔</span>
-          <div class="fsm-node">DESERIALIZE</div>
-          <span class="fsm-arrow">➔</span>
-          <div class="fsm-node">PARITY_CHECK</div>
-          <span class="fsm-arrow">➔</span>
-          <div class="fsm-node">FIFO_WRITE</div>
-          <span class="fsm-arrow">➔</span>
-          <div class="fsm-node">DONE</div>
-        </div>
-        <div id="fsm-state-desc" style="font-family: var(--font-mono); font-size: 0.75rem; color: #38bdf8; margin-top: 0.35rem;">
-          IDLE: RX line high, waiting for falling edge on start bit
-        </div>
-      </div>
-
-      <!-- Real-Time SHA-1 Cryptographic Pipeline -->
-      <div style="margin-top: 2rem; background: rgba(15,23,42,0.4); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
-          <span style="font-size: 0.95rem; font-weight: 700;">SHA-1 Cryptographic Pipeline (Live 160-bit Hardware Digest)</span>
-          <span style="font-size: 0.75rem; color: #10b981; font-family: var(--font-mono);">Clock: 100 MHz &bull; 82 Cycles/Block &bull; 622 Mbps</span>
-        </div>
-
-        <div class="sha-register-grid">
-          <div class="sha-reg-box">
-            <div class="reg-label">REG A (32-bit)</div>
-            <div class="reg-val" id="sha-reg-a">0x67452301</div>
+        <div class="sha-grid-five">
+          <div class="sha-cell">
+            <div style="font-size: 0.65rem; color: #94a3b8;">REG A</div>
+            <div id="sha-reg-a" style="color: #00e5ff; font-family: var(--font-mono); font-weight: 700; font-size: 0.82rem;">0x67452301</div>
           </div>
-          <div class="sha-reg-box">
-            <div class="reg-label">REG B (32-bit)</div>
-            <div class="reg-val" id="sha-reg-b">0xefcdab89</div>
+          <div class="sha-cell">
+            <div style="font-size: 0.65rem; color: #94a3b8;">REG B</div>
+            <div id="sha-reg-b" style="color: #00e5ff; font-family: var(--font-mono); font-weight: 700; font-size: 0.82rem;">0xefcdab89</div>
           </div>
-          <div class="sha-reg-box">
-            <div class="reg-label">REG C (32-bit)</div>
-            <div class="reg-val" id="sha-reg-c">0x98badcfe</div>
+          <div class="sha-cell">
+            <div style="font-size: 0.65rem; color: #94a3b8;">REG C</div>
+            <div id="sha-reg-c" style="color: #00e5ff; font-family: var(--font-mono); font-weight: 700; font-size: 0.82rem;">0x98badcfe</div>
           </div>
-          <div class="sha-reg-box">
-            <div class="reg-label">REG D (32-bit)</div>
-            <div class="reg-val" id="sha-reg-d">0x10325476</div>
+          <div class="sha-cell">
+            <div style="font-size: 0.65rem; color: #94a3b8;">REG D</div>
+            <div id="sha-reg-d" style="color: #00e5ff; font-family: var(--font-mono); font-weight: 700; font-size: 0.82rem;">0x10325476</div>
           </div>
-          <div class="sha-reg-box">
-            <div class="reg-label">REG E (32-bit)</div>
-            <div class="reg-val" id="sha-reg-e">0xc3d2e1f0</div>
+          <div class="sha-cell">
+            <div style="font-size: 0.65rem; color: #94a3b8;">REG E</div>
+            <div id="sha-reg-e" style="color: #00e5ff; font-family: var(--font-mono); font-weight: 700; font-size: 0.82rem;">0xc3d2e1f0</div>
           </div>
         </div>
 
-        <div style="margin-top: 1rem; padding: 0.85rem; background: #030712; border-radius: 4px; border: 1px solid var(--border-subtle);">
-          <div style="font-size: 0.7rem; color: #94a3b8; text-transform: uppercase;">160-bit SHA-1 Hexadecimal Digest Output:</div>
-          <div id="sha-full-digest" style="font-family: var(--font-mono); font-size: 0.88rem; color: #38bdf8; font-weight: 700; word-break: break-all; margin-top: 0.25rem;">
+        <div style="margin-top: 0.85rem; padding: 0.65rem; background: #020617; border-radius: 4px; border: 1px solid var(--border-color);">
+          <div style="font-size: 0.65rem; color: #94a3b8; text-transform: uppercase;">160-bit SHA-1 Output:</div>
+          <div id="sha-digest-hex" style="font-family: var(--font-mono); font-size: 0.82rem; color: #00e5ff; font-weight: 700; word-break: break-all; margin-top: 0.2rem;">
             Computing...
           </div>
         </div>

@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sony BRAVIA 4K Apple TV Launcher & System Simulator | Kshitij Garg</title>
+  <title>Sony BRAVIA 4K Apple TV Launcher & System Simulator</title>
   <meta name="description" content="Interactive browser simulator for Sony BRAVIA 4K Apple TV Minimalist Launcher. Web Audio acoustic taps, D-pad remote navigation, Move Mode, and Control Center.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22 width=%2232%22 height=%2232%22><text y=%2224%22 font-size=%2222%22>📺</text></svg>">
   <link rel="stylesheet" href="../styles.css">
   <style>
     body {
-      padding-top: 2rem;
-      background: radial-gradient(circle at 50% 20%, #1e1b4b 0%, #07090e 80%);
+      padding: 1.5rem 0 3rem;
+      background: radial-gradient(circle at 50% 20%, #1e1b4b 0%, #06080d 80%);
     }
-    .back-bar {
+    .back-nav-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 1.5rem;
-      padding: 0.75rem 1.25rem;
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid var(--border-subtle);
+      padding: 0.65rem 1.25rem;
+      background: rgba(13, 17, 24, 0.85);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
       backdrop-filter: blur(12px);
     }
@@ -26,157 +27,266 @@
 </head>
 <body>
   <div class="container" style="max-width: 1200px;">
-    <div class="back-bar">
-      <a href="../#tv-launcher" style="font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-        <span>←</span> Back to Unified Executive Portfolio Hub
+    <div class="back-nav-bar">
+      <a href="../#tv" style="font-weight: 700; font-size: 0.88rem; display: flex; align-items: center; gap: 0.5rem;">
+        <span>←</span> Back to Live Apps Showcase
       </a>
-      <div style="font-size: 0.85rem; color: #94a3b8;">
-        Sony BRAVIA VH2 / X90H 4K Android TV Simulator &bull; v2.4 Live
+      <div style="font-size: 0.8rem; color: #94a3b8;">
+        Sony BRAVIA VH2 4K Leanback Launcher Simulator &bull; v2.4 Live
       </div>
     </div>
 
-    <!-- Active TV Panel Container -->
-    <div id="tab-tv" class="app-panel active" style="display: block;">
-      <div class="app-panel-header">
-        <div class="app-title-group">
-          <h3>
-            <span>📺</span>
-            <span>Sony BRAVIA 4K Apple TV Launcher & System Simulator</span>
-          </h3>
-          <p>
-            Ultra-lightweight native launcher engineered for Sony BRAVIA 4K Smart TVs. Slashes RAM from 420MB to 18MB, reduces boot latency to 410ms, and provides acoustic wood tap feedback via Web Audio API.
-          </p>
+    <div id="panel-tv" class="app-view-panel active" style="display: block;">
+      <div class="panel-toolbar">
+        <div class="panel-title">
+          <h2><span>📺</span> Sony BRAVIA 4K Apple TV Launcher Simulator</h2>
+          <p>Native Leanback Android TV launcher with tactile Web Audio acoustic taps, D-pad navigation, Move Mode, and working in-app interfaces.</p>
         </div>
-        <div class="app-panel-actions">
+        <div class="panel-actions">
           <a href="https://github.com/kshitij-garg/sony-bravia-vh2-debloater/releases/download/v2.4.0/CleanYourTV_v2.4_Aligned.apk" class="btn btn-primary btn-sm">
             Download APK (328 KB)
           </a>
           <a href="https://github.com/kshitij-garg/sony-bravia-vh2-debloater" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-            View GitHub Repo ↗
+            GitHub Repository ↗
           </a>
         </div>
       </div>
 
-      <div class="simulator-layout-grid">
-        <!-- 16:9 TV Frame -->
-        <div class="tv-simulator-frame">
-          <div class="tv-screen">
-            <!-- Top Status Bar -->
-            <div class="tv-status-bar">
-              <div class="tv-status-left">
-                <span class="tv-pill-badge">4K HDR</span>
-                <span class="tv-pill-badge">DOLBY ATMOS</span>
-                <span class="tv-pill-badge" id="tv-sound-badge">Stereo Tap</span>
+      <div class="tv-simulator-wrapper">
+        <!-- 16:9 TV Screen -->
+        <div class="tv-bezel">
+          <div class="tv-screen" id="tv-screen-box">
+            <!-- TV Top Status Bar -->
+            <div class="tv-status">
+              <div style="display: flex; gap: 0.4rem; align-items: center;">
+                <span class="tv-badge">4K HDR</span>
+                <span class="tv-badge">DOLBY ATMOS</span>
+                <span class="tv-badge" id="tv-sound-badge">Acoustic Tap</span>
               </div>
-              <div class="tv-status-right">
+              <div style="display: flex; gap: 0.6rem; align-items: center;">
                 <span>WiFi 6 &bull; 866 Mbps</span>
-                <span id="tv-status-clock" style="cursor: pointer; padding: 2px 6px; border-radius: 4px; background: rgba(255,255,255,0.1);">12:45 PM [CC ⚙️]</span>
+                <span style="font-weight: 700;">12:45 PM</span>
               </div>
             </div>
 
-            <!-- Hero Banner -->
-            <div class="tv-hero-banner">
-              <div class="tv-hero-meta">
-                <div class="tv-hero-tag">FEATURED 4K CINEMATIC</div>
-                <div class="tv-hero-title">Sony BRAVIA Minimalist Experience</div>
-              </div>
-            </div>
-
-            <!-- App Grid Container -->
-            <div class="tv-grid-container">
-              <div class="tv-grid-title">
-                <span>Installed Applications</span>
-                <span style="font-size: 0.65rem; color: #38bdf8;">RAM: 18MB active</span>
-              </div>
-              <div id="tv-apps-grid" class="tv-apps-row"></div>
-            </div>
-
-            <!-- Toast -->
-            <div id="tv-toast" style="position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%) translateY(10px); background: rgba(15,23,42,0.92); border: 1px solid #38bdf8; color: #ffffff; padding: 6px 16px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; opacity: 0; transition: all 0.25s ease; pointer-events: none; z-index: 20;">
-              Welcome to Sony BRAVIA Apple TV Simulator
-            </div>
-
-            <!-- Slide-Out Control Center -->
-            <div id="tv-control-center" class="tv-control-center">
-              <div class="cc-header">
-                <h4>Control Center</h4>
-                <button id="cc-close-btn" class="remote-btn-mini">&times;</button>
+            <!-- VIEW 1: MAIN HOME SCREEN -->
+            <div id="tv-view-home" class="tv-view active-view">
+              <div class="tv-home-banner">
+                <div class="tv-banner-tag">FEATURED 4K CINEMATIC</div>
+                <div class="tv-banner-title">Sony BRAVIA Minimalist Experience</div>
+                <div style="font-size: 0.62rem; color: #cbd5e1; margin-top: 0.15rem;">Zero Ads &bull; 18MB RAM (95.7% freed) &bull; 410ms Cold Boot</div>
               </div>
 
-              <div class="cc-toggle-item" id="cc-sound-toggle">
-                <div class="cc-toggle-label">
-                  <span>🔊</span>
-                  <span id="cc-sound-label">Navigation Sound (Enabled)</span>
+              <div class="tv-dock-label">Persistent Dock (Row 0)</div>
+              <div id="tv-dock-container" class="tv-dock-row"></div>
+
+              <div class="tv-dock-label" style="margin-top: 0.25rem;">Applications Grid</div>
+              <div id="tv-grid-container" class="tv-grid-row"></div>
+            </div>
+
+            <!-- VIEW 2: YOUTUBE TV SIMULATION -->
+            <div id="tv-view-youtube" class="tv-view">
+              <div class="sim-app-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 800; font-size: 0.85rem; color: #ff0000;">
+                  <span>▶️ YouTube TV</span>
+                  <span style="font-size: 0.65rem; color: #94a3b8; font-weight: 500;">4K HDR 60fps</span>
                 </div>
-                <div class="cc-switch active" id="cc-sound-switch"></div>
+                <button class="sim-back-btn">← Back to TV Home</button>
+              </div>
+              <div class="yt-grid">
+                <div class="yt-card">
+                  <div class="yt-thumb">🎬</div>
+                  <div class="yt-info">
+                    <div class="yt-title">Sony 4K OLED Demo - Colors of Nature</div>
+                    <div class="yt-meta">Sony BRAVIA &bull; 4K HDR 60fps</div>
+                  </div>
+                </div>
+                <div class="yt-card">
+                  <div class="yt-thumb">🌍</div>
+                  <div class="yt-info">
+                    <div class="yt-title">BBC Planet Earth III - 4K Ultra HD</div>
+                    <div class="yt-meta">BBC Earth &bull; Dolby Atmos</div>
+                  </div>
+                </div>
+                <div class="yt-card">
+                  <div class="yt-thumb">🌌</div>
+                  <div class="yt-info">
+                    <div class="yt-title">Interstellar IMAX Soundstage & Visuals</div>
+                    <div class="yt-meta">Warner Bros &bull; 4K HDR</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- VIEW 3: TVBRO WEB BROWSER SIMULATION -->
+            <div id="tv-view-tvbro" class="tv-view">
+              <div class="sim-app-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 800; font-size: 0.85rem; color: #00e5ff;">
+                  <span>🌐 TV Bro Web Browser</span>
+                </div>
+                <button class="sim-back-btn">← Back to TV Home</button>
+              </div>
+              <div class="browser-url-bar">
+                <span>🔒 https://github.com/kshitij-garg/sony-bravia-vh2-debloater</span>
+              </div>
+              <div class="browser-content">
+                <div style="font-weight: 800; font-size: 0.95rem; margin-bottom: 0.25rem;">Sony BRAVIA 4K Debloater & Launcher</div>
+                <div style="color: #475569; margin-bottom: 0.5rem;">Native Leanback Framework Implementation &bull; ~328 KB APK</div>
+                <div style="background: #f1f5f9; padding: 0.5rem; border-radius: 4px; border: 1px solid #cbd5e1; font-family: var(--font-mono); font-size: 0.65rem;">
+                  $ adb shell pm disable-user --user 0 com.google.android.apps.tv.launcherx<br>
+                  $ adb shell am start -n com.spocky.projengmenu/.MainActivity<br>
+                  [OK] Replaced stock Google TV launcher in 410ms
+                </div>
+              </div>
+            </div>
+
+            <!-- VIEW 4: APTOIDE TV STORE SIMULATION -->
+            <div id="tv-view-aptoide" class="tv-view">
+              <div class="sim-app-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 800; font-size: 0.85rem; color: #f97316;">
+                  <span>📱 Aptoide TV App Store</span>
+                </div>
+                <button class="sim-back-btn">← Back to TV Home</button>
+              </div>
+              <div class="store-list">
+                <div class="store-item">
+                  <div class="store-item-info">
+                    <span style="font-size: 1.1rem;">📺</span>
+                    <div>
+                      <div style="font-size: 0.72rem; font-weight: 700; color: #ffffff;">SmartTube Stable</div>
+                      <div style="font-size: 0.6rem; color: #94a3b8;">Ad-free 4K video player with SponsorBlock</div>
+                    </div>
+                  </div>
+                  <button class="install-btn">Install</button>
+                </div>
+                <div class="store-item">
+                  <div class="store-item-info">
+                    <span style="font-size: 1.1rem;">🍿</span>
+                    <div>
+                      <div style="font-size: 0.72rem; font-weight: 700; color: #ffffff;">Kodi Media Center</div>
+                      <div style="font-size: 0.6rem; color: #94a3b8;">Home theater media player for NAS & DLNA</div>
+                    </div>
+                  </div>
+                  <button class="install-btn">Install</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- VIEW 5: TV SETTINGS SIMULATION -->
+            <div id="tv-view-settings" class="tv-view">
+              <div class="sim-app-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 800; font-size: 0.85rem; color: #ffffff;">
+                  <span>⚙️ Sony BRAVIA 4K Settings</span>
+                </div>
+                <button class="sim-back-btn">← Back to TV Home</button>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.72rem;">
+                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; display: flex; justify-content: space-between;">
+                  <span>Picture Mode</span>
+                  <span style="color: #00e5ff; font-weight: 700;">Custom 4K HDR &bull; Motionflow Smooth</span>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; display: flex; justify-content: space-between;">
+                  <span>Audio Output</span>
+                  <span style="color: #00e5ff; font-weight: 700;">eARC &bull; Dolby Atmos Passthrough</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- VIEW 6: SPOTIFY MUSIC PLAYER -->
+            <div id="tv-view-spotify" class="tv-view">
+              <div class="sim-app-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 800; font-size: 0.85rem; color: #1db954;">
+                  <span>🎵 Spotify for TV</span>
+                </div>
+                <button class="sim-back-btn">← Back to TV Home</button>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: rgba(0,0,0,0.5); border-radius: 6px;">
+                <div style="width: 50px; height: 50px; background: #10b981; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                  🎼
+                </div>
+                <div style="flex: 1;">
+                  <div style="font-size: 0.82rem; font-weight: 700; color: #ffffff;">Nuvole Bianche</div>
+                  <div style="font-size: 0.65rem; color: #94a3b8;">Ludovico Einaudi</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TV Toast -->
+            <div id="tv-toast" style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%) translateY(10px); background: rgba(13,17,24,0.95); border: 1px solid #00e5ff; color: #ffffff; padding: 4px 14px; border-radius: 16px; font-size: 0.7rem; font-weight: 600; opacity: 0; transition: all 0.2s ease; pointer-events: none; z-index: 25;">
+              Welcome
+            </div>
+
+            <!-- Slide-out Control Center Drawer -->
+            <div id="tv-cc-drawer" class="tv-cc-drawer">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                <span style="font-weight: 800; font-size: 0.85rem;">Control Center</span>
+                <button id="cc-close-btn" style="background: none; border: none; color: #ffffff; font-size: 1.1rem; cursor: pointer;">&times;</button>
               </div>
 
-              <div class="stat-box" style="padding: 0.75rem;">
-                <div class="stat-num emerald" style="font-size: 1.25rem;">18 MB</div>
-                <div class="stat-label" style="font-size: 0.68rem;">Active RAM Footprint</div>
-                <div class="stat-sub" style="font-size: 0.65rem;">OEM: 420 MB (95.7% freed)</div>
+              <div style="background: rgba(255,255,255,0.05); padding: 0.6rem; border-radius: 6px; border: 1px solid var(--border-color); cursor: pointer;" id="cc-sound-toggle">
+                <div style="font-size: 0.72rem; font-weight: 700;" id="cc-sound-label">Navigation Sound: Enabled</div>
+                <div style="font-size: 0.62rem; color: #94a3b8; margin-top: 0.15rem;">Click to toggle tactile audio</div>
               </div>
 
-              <div class="stat-box" style="padding: 0.75rem;">
-                <div class="stat-num" style="font-size: 1.25rem;">410 ms</div>
-                <div class="stat-label" style="font-size: 0.68rem;">Cold Boot Latency</div>
-                <div class="stat-sub" style="font-size: 0.65rem;">OEM: 4,200 ms (90.2% faster)</div>
+              <div style="background: rgba(255,255,255,0.05); padding: 0.6rem; border-radius: 6px; border: 1px solid var(--border-color);">
+                <div style="font-size: 0.65rem; color: #94a3b8;">Active RAM Footprint:</div>
+                <div style="font-size: 1.1rem; font-weight: 800; color: #10b981; font-family: var(--font-mono);" id="cc-ram-num">18 MB Active</div>
+                <button id="cc-btn-ram" class="btn btn-primary btn-sm" style="width: 100%; margin-top: 0.4rem; padding: 0.3rem;">Run RAM Cleaner 🧹</button>
               </div>
+
+              <button id="cc-btn-wallpaper" class="btn btn-secondary btn-sm" style="width: 100%;">
+                Cycle Ambient Wallpaper 🎨
+              </button>
             </div>
           </div>
 
           <div class="tv-bezel-brand">SONY</div>
-          <div class="tv-bezel-indicator"></div>
         </div>
 
-        <!-- Virtual Remote Control Widget -->
-        <div class="remote-control-widget">
-          <div class="remote-brand">
-            <span>SONY</span>
-            <span style="font-size: 0.55rem; color: #64748b;">BRAVIA RMF-TX500U</span>
+        <!-- Virtual Remote Control -->
+        <div class="tv-remote">
+          <div class="remote-header">
+            <button class="remote-power-btn" id="remote-btn-power" title="TV Power">⏻</button>
+            <div style="font-size: 0.62rem; font-weight: 800; letter-spacing: 0.15em; color: #94a3b8;">SONY BRAVIA</div>
+            <button class="remote-mute-btn" id="remote-btn-mute" title="Mute Sound">🔊</button>
           </div>
 
-          <div class="remote-top-bar">
-            <button class="remote-btn-mini power" id="remote-btn-power" title="TV Standby">⏻</button>
-            <button class="remote-btn-mini" id="remote-btn-mute" title="Mute Audio">🔇</button>
+          <div class="remote-wheel">
+            <button class="wheel-btn wheel-up" id="wheel-up" title="Up">▲</button>
+            <button class="wheel-btn wheel-down" id="wheel-down" title="Down">▼</button>
+            <button class="wheel-btn wheel-left" id="wheel-left" title="Left">◀</button>
+            <button class="wheel-btn wheel-right" id="wheel-right" title="Right">▶</button>
+            <button class="wheel-center" id="wheel-center" title="OK / Select">OK</button>
           </div>
 
-          <div class="remote-dpad">
-            <button class="dpad-btn dpad-up" id="dpad-up" title="Up">▲</button>
-            <button class="dpad-btn dpad-down" id="dpad-down" title="Down">▼</button>
-            <button class="dpad-btn dpad-left" id="dpad-left" title="Left">◀</button>
-            <button class="dpad-btn dpad-right" id="dpad-right" title="Right">▶</button>
-            <button class="dpad-center" id="dpad-center" title="OK / Select">OK</button>
-          </div>
-
-          <div class="remote-row">
-            <button class="remote-btn" id="remote-btn-back">
+          <div class="remote-action-grid">
+            <button class="r-btn" id="remote-btn-back">
               <span>↩</span>
               <span>BACK</span>
             </button>
-            <button class="remote-btn" id="remote-btn-home">
+            <button class="r-btn" id="remote-btn-home">
               <span>⌂</span>
               <span>HOME</span>
             </button>
-            <button class="remote-btn" id="remote-btn-menu">
+            <button class="r-btn" id="remote-btn-menu">
               <span>⚙</span>
-              <span>CC / MENU</span>
+              <span>MENU</span>
             </button>
           </div>
 
-          <div class="remote-row">
-            <button class="remote-btn" id="remote-btn-move" title="Toggle Move Mode to rearrange tiles">
+          <div class="remote-action-grid" style="grid-template-columns: 1fr 1fr;">
+            <button class="r-btn" id="remote-btn-move" title="Rearrange tiles">
               <span>⇄</span>
               <span>MOVE MODE</span>
             </button>
-            <button class="remote-btn" id="remote-btn-sort" title="Sort apps alphabetically">
-              <span>🔤</span>
-              <span>SORT (A-Z)</span>
+            <button class="r-btn" id="remote-btn-ambient" onclick="document.getElementById('cc-btn-wallpaper').click()">
+              <span>🎨</span>
+              <span>WALLPAPER</span>
             </button>
           </div>
 
-          <div style="font-size: 0.68rem; color: #64748b; text-align: center; margin-top: 0.25rem;">
-            Keyboard: Arrow Keys &bull; Enter &bull; Esc &bull; M (Mute)
+          <div style="font-size: 0.65rem; color: #64748b; text-align: center;">
+            Keys: Arrows &bull; Enter &bull; Esc &bull; M (Mute)
           </div>
         </div>
       </div>

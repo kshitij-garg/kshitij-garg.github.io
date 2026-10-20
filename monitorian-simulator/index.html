@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monitorian 2.0 Display Systems Simulator | Kshitij Garg</title>
+  <title>Monitorian 2.0 Display Systems Simulator</title>
   <meta name="description" content="Windows Multi-Monitor DDC/CI Display Control Systems Engine browser simulator. Sliders, middle-click instant blackout, and CLI terminal.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22 width=%2232%22 height=%2232%22><text y=%2224%22 font-size=%2222%22>🖥️</text></svg>">
   <link rel="stylesheet" href="../styles.css">
   <style>
     body {
-      padding-top: 2rem;
-      background: radial-gradient(circle at 50% 20%, #064e3b 0%, #07090e 80%);
+      padding: 1.5rem 0 3rem;
+      background: radial-gradient(circle at 50% 20%, #064e3b 0%, #06080d 80%);
     }
-    .back-bar {
+    .back-nav-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 1.5rem;
-      padding: 0.75rem 1.25rem;
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid var(--border-subtle);
+      padding: 0.65rem 1.25rem;
+      background: rgba(13, 17, 24, 0.85);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
       backdrop-filter: blur(12px);
     }
@@ -26,136 +27,123 @@
 </head>
 <body>
   <div class="container" style="max-width: 1200px;">
-    <div class="back-bar">
-      <a href="../#monitorian" style="font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-        <span>←</span> Back to Unified Executive Portfolio Hub
+    <div class="back-nav-bar">
+      <a href="../#monitorian" style="font-weight: 700; font-size: 0.88rem; display: flex; align-items: center; gap: 0.5rem;">
+        <span>←</span> Back to Live Apps Showcase
       </a>
-      <div style="font-size: 0.85rem; color: #94a3b8;">
-        Monitorian 2.0 &bull; Windows Multi-Monitor DDC/CI Systems Simulator
+      <div style="font-size: 0.8rem; color: #94a3b8;">
+        Monitorian 2.0 &bull; Windows Multi-Monitor DDC/CI Simulator
       </div>
     </div>
 
-    <!-- Active Monitorian Panel -->
-    <div id="tab-monitorian" class="app-panel active" style="display: block;">
-      <div class="app-panel-header">
-        <div class="app-title-group">
-          <h3>
-            <span>🖥️</span>
-            <span>Monitorian 2.0 &bull; Multi-Monitor Display Systems Simulator</span>
-          </h3>
-          <p>
-            Enterprise multi-monitor luminance and color orchestration engine. Used by over 300,000 active professionals. Simulates DDC/CI VCP opcode 0x10 brightness, 0x12 contrast, middle-click instant blackout, and circadian solar warmth curves.
-          </p>
+    <div id="panel-monitorian" class="app-view-panel active" style="display: block;">
+      <div class="panel-toolbar">
+        <div class="panel-title">
+          <h2><span>🖥️</span> Monitorian 2.0 &bull; Windows Multi-Monitor Display Systems Simulator</h2>
+          <p>Windows DDC/CI multi-monitor hardware controller with instant blackout, proportional gang sync, and native CLI.</p>
         </div>
-        <div class="app-panel-actions">
+        <div class="panel-actions">
           <a href="https://github.com/kshitij-garg/Monitorian-2.0" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-            View Repository & Win32 Docs ↗
+            GitHub Repository & Win32 Docs ↗
           </a>
         </div>
       </div>
 
-      <!-- Multi-Monitor Hardware Array -->
-      <div class="monitor-array" id="monitor-array-container">
-        <!-- Monitor 1: 32" 4K Landscape -->
-        <div class="virtual-monitor">
-          <div class="monitor-screen-box screen-landscape-lg">
-            <div class="monitor-inner-visual" id="screen-mon-1" style="background: radial-gradient(circle at 50% 30%, #1e3a8a, #090d16);">
-              <div class="monitor-label-tag"><span>💻</span> Display 1 (32" 4K UHD)</div>
-              <div class="monitor-status-nit" id="mon-val-1">75% (285 nits)</div>
-              <div style="font-size: 0.55rem; color: #94a3b8;">VCP 0x10 &bull; DDC/CI 0x37</div>
+      <div class="monitors-visual-strip" id="monitors-visual-container">
+        <!-- Monitor 1: 32" 4K -->
+        <div class="mon-hardware-unit">
+          <div class="mon-screen-frame mon-screen-large">
+            <div class="mon-screen-content" id="mon-screen-1" style="background: radial-gradient(circle at 50% 30%, #1e3a8a, #020617);">
+              <div style="font-weight: 700;">Display 1 (32" 4K UHD)</div>
+              <div id="mon-val-1" style="font-size: 0.8rem; font-weight: 800; color: #00e5ff; font-family: var(--font-mono);">75% (285 nits)</div>
+              <div style="color: #94a3b8; font-size: 0.55rem;">VCP 0x10 &bull; DDC/CI 0x37</div>
             </div>
           </div>
-          <div class="monitor-stand"></div>
-          <div class="monitor-base"></div>
+          <div class="mon-stand-pole"></div>
+          <div class="mon-stand-foot"></div>
         </div>
 
-        <!-- Monitor 2: 27" Vertical Coding -->
-        <div class="virtual-monitor">
-          <div class="monitor-screen-box screen-portrait">
-            <div class="monitor-inner-visual" id="screen-mon-2" style="background: radial-gradient(circle at 50% 30%, #312e81, #090d16);">
-              <div class="monitor-label-tag"><span>📜</span> Display 2 (27" Vertical)</div>
-              <div class="monitor-status-nit" id="mon-val-2">60% (228 nits)</div>
-              <div style="font-size: 0.55rem; color: #94a3b8;">VCP 0x10</div>
+        <!-- Monitor 2: 27" Vertical -->
+        <div class="mon-hardware-unit">
+          <div class="mon-screen-frame mon-screen-portrait">
+            <div class="mon-screen-content" id="mon-screen-2" style="background: radial-gradient(circle at 50% 30%, #312e81, #020617);">
+              <div style="font-weight: 700;">Display 2 (27" Vertical)</div>
+              <div id="mon-val-2" style="font-size: 0.8rem; font-weight: 800; color: #00e5ff; font-family: var(--font-mono);">60% (228 nits)</div>
+              <div style="color: #94a3b8; font-size: 0.55rem;">VCP 0x10</div>
             </div>
           </div>
-          <div class="monitor-stand"></div>
-          <div class="monitor-base"></div>
+          <div class="mon-stand-pole"></div>
+          <div class="mon-stand-foot"></div>
         </div>
 
-        <!-- Monitor 3: 24" Studio Reference -->
-        <div class="virtual-monitor">
-          <div class="monitor-screen-box screen-landscape-sm">
-            <div class="monitor-inner-visual" id="screen-mon-3" style="background: radial-gradient(circle at 50% 30%, #064e3b, #090d16);">
-              <div class="monitor-label-tag"><span>🎨</span> Display 3 (24" sRGB)</div>
-              <div class="monitor-status-nit" id="mon-val-3">80% (304 nits)</div>
-              <div style="font-size: 0.55rem; color: #94a3b8;">VCP 0x10</div>
+        <!-- Monitor 3: 24" Studio -->
+        <div class="mon-hardware-unit">
+          <div class="mon-screen-frame mon-screen-medium">
+            <div class="mon-screen-content" id="mon-screen-3" style="background: radial-gradient(circle at 50% 30%, #064e3b, #020617);">
+              <div style="font-weight: 700;">Display 3 (24" sRGB)</div>
+              <div id="mon-val-3" style="font-size: 0.8rem; font-weight: 800; color: #00e5ff; font-family: var(--font-mono);">80% (304 nits)</div>
+              <div style="color: #94a3b8; font-size: 0.55rem;">VCP 0x10</div>
             </div>
           </div>
-          <div class="monitor-stand"></div>
-          <div class="monitor-base"></div>
+          <div class="mon-stand-pole"></div>
+          <div class="mon-stand-foot"></div>
         </div>
       </div>
 
-      <!-- Controls & Embedded CLI Terminal -->
-      <div class="simulator-layout-grid">
-        <div class="stat-box" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem;">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-weight: 700; font-size: 0.95rem;">Display Luminance Sliders</span>
-            <button id="btn-blackout-toggle" class="btn btn-secondary btn-sm">
-              🌙 Middle-Click Instant Blackout
-            </button>
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1.5rem;">
+        <div style="background: rgba(13,17,24,0.6); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
+            <span style="font-size: 0.88rem; font-weight: 700;">Hardware Luminance Controls</span>
+            <button id="btn-blackout" class="btn btn-secondary btn-sm">🌙 Middle-Click Instant Blackout</button>
           </div>
 
-          <div class="asset-slider-row">
-            <div class="asset-meta">
-              <span class="asset-label">Display 1 (32" 4K IPS)</span>
-              <span class="asset-val">VCP 0x10</span>
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span>Display 1 (32" 4K IPS)</span>
+              <span style="color: #00e5ff; font-family: var(--font-mono);">VCP 0x10</span>
             </div>
-            <input type="range" class="custom-range" id="mon-slider-1" min="0" max="100" value="75">
+            <input type="range" class="range-input" id="mon-slider-1" min="0" max="100" value="75">
           </div>
 
-          <div class="asset-slider-row">
-            <div class="asset-meta">
-              <span class="asset-label">Display 2 (27" Vertical QHD)</span>
-              <span class="asset-val">VCP 0x10</span>
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span>Display 2 (27" Vertical QHD)</span>
+              <span style="color: #00e5ff; font-family: var(--font-mono);">VCP 0x10</span>
             </div>
-            <input type="range" class="custom-range" id="mon-slider-2" min="0" max="100" value="60">
+            <input type="range" class="range-input" id="mon-slider-2" min="0" max="100" value="60">
           </div>
 
-          <div class="asset-slider-row">
-            <div class="asset-meta">
-              <span class="asset-label">Display 3 (24" sRGB Reference)</span>
-              <span class="asset-val">VCP 0x10</span>
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span>Display 3 (24" sRGB Reference)</span>
+              <span style="color: #00e5ff; font-family: var(--font-mono);">VCP 0x10</span>
             </div>
-            <input type="range" class="custom-range" id="mon-slider-3" min="0" max="100" value="80">
+            <input type="range" class="range-input" id="mon-slider-3" min="0" max="100" value="80">
           </div>
 
-          <div class="cc-toggle-item" id="mon-sync-toggle-row">
-            <div class="cc-toggle-label">
-              <span>🔗</span>
-              <span>Unify & Gang All Display Sliders</span>
-            </div>
-            <div class="cc-switch" id="mon-sync-switch"></div>
+          <div style="background: rgba(255,255,255,0.04); padding: 0.5rem 0.75rem; border-radius: 6px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; cursor: pointer; margin-top: 0.5rem;" id="mon-sync-row">
+            <span style="font-size: 0.75rem; font-weight: 600;">🔗 Proportional Gang Sync Across All Displays</span>
+            <span id="mon-sync-switch" style="font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(255,255,255,0.1); color: #94a3b8;">TOGGLE</span>
           </div>
 
-          <div class="asset-slider-row">
-            <div class="asset-meta">
-              <span class="asset-label">Circadian Solar Warmth</span>
-              <span class="asset-val" id="val-circadian">6500K</span>
+          <div class="slider-group" style="margin-top: 0.75rem;">
+            <div class="slider-label-row">
+              <span>Circadian Solar Warmth</span>
+              <span id="val-circadian" style="color: #fbbf24; font-family: var(--font-mono);">6500K</span>
             </div>
-            <input type="range" class="custom-range" id="slider-circadian" min="2700" max="6500" value="6500" step="100">
+            <input type="range" class="range-input" id="slider-circadian" min="2700" max="6500" value="6500" step="100">
           </div>
         </div>
 
-        <div class="monitorian-cli-box">
-          <div class="cli-history" id="monitorian-cli-history">
-            <div class="cli-line success">Monitorian 2.0 DDC/CI VCP Engine Initialized.</div>
-            <div class="cli-line info">P/Invoke dxva2.dll loaded. 3 physical displays attached.</div>
-            <div class="cli-line">Type "help" to view available terminal commands.</div>
+        <div class="monitorian-term">
+          <div class="term-scroll" id="term-scroll-box">
+            <div style="color: #10b981;">Monitorian 2.0 DDC/CI Engine Loaded.</div>
+            <div style="color: #94a3b8;">3 physical displays attached via P/Invoke dxva2.dll</div>
+            <div>Type "help" for terminal commands.</div>
           </div>
-          <div class="cli-input-row">
-            <span class="cli-prompt">DDC/CI&gt;</span>
-            <input type="text" id="monitorian-cli-input" class="cli-input" placeholder="e.g. status, set 1 85, blackout, benchmark">
+          <div class="term-input-line">
+            <span style="color: #00e5ff; font-weight: 700;">DDC/CI&gt;</span>
+            <input type="text" id="term-input" placeholder="e.g. status, set 1 85, blackout">
           </div>
         </div>
       </div>

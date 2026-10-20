@@ -1,41 +1,42 @@
-# Kshitij Garg &bull; Executive Portfolio & Unified Live Systems Hub
+# Live Applications & Interactive Systems Hub
 
-> **Lead Technical Project & Product Manager | Systems Architecture & High-Concurrency Infrastructure**  
-> **Unified Live Production Hub:** [https://kshitij-garg.github.io/](https://kshitij-garg.github.io/)  
-> **Verified LinkedIn:** [https://in.linkedin.com/in/garg-kshitij](https://in.linkedin.com/in/garg-kshitij) &bull; **GitHub:** [https://github.com/kshitij-garg](https://github.com/kshitij-garg)
+> **Unified Production Live Apps Hub:** [https://kshitij-garg.github.io/](https://kshitij-garg.github.io/)
+
+A dedicated platform hosting client-side interactive web simulators, open-source utilities, and production systems engineered with the Web Audio API, Canvas, and modern Web APIs:
 
 ---
 
-## ⚡ Executive Overview
+## 🚀 Live Applications & Simulators
 
-This repository hosts the official **Unified Executive Portfolio & Live Interactive Systems Hub** for **Kshitij Garg**.
-
-Rather than fragmented demos, all major production repositories are unified into a single client-side platform powered by native HTML5, CSS3, ES6+ Web Workers, Canvas, and the **Web Audio API**:
-
-| System / Repository | Architecture & Tech Stack | Live Interactive Demo URL |
+| Application / Repository | Stack & Architecture | Production Demo Link |
 | :--- | :--- | :--- |
-| **[Sony BRAVIA 4K Apple TV Launcher](https://github.com/kshitij-garg/sony-bravia-vh2-debloater)** | Android TV OS, ADB Automation, Web Audio API (35ms tactile taps), Move Mode | [Live TV Simulator](https://kshitij-garg.github.io/#tv-launcher) &bull; [Standalone Fullscreen](https://kshitij-garg.github.io/tv-simulator/) |
-| **[QuantRebalance Intelligence Engine](https://github.com/kshitij-garg/quant-rebalance)** | Multi-Asset Covariance Matrix, Risk Parity, Sharpe Optimization, 95% Daily VaR | [Live Rebalance Hub](https://kshitij-garg.github.io/#quant-rebalance) &bull; [Production Web App](https://kshitij-garg.github.io/quant-rebalance/) |
-| **[Monitorian 2.0 Display Systems](https://github.com/kshitij-garg/Monitorian-2.0)** | Win32 API, P/Invoke `dxva2.dll`, DDC/CI VCP Opcodes, Circadian Day/Night | [Live Display Simulator](https://kshitij-garg.github.io/#monitorian) &bull; [Standalone Fullscreen](https://kshitij-garg.github.io/monitorian-simulator/) |
-| **[Hardware UART & SHA-1 Accelerator](https://github.com/kshitij-garg/UART-Verilog)** | Synthesizable Verilog HDL, 16x Oversampling, 80-round SHA-1, 100MHz FPGA | [Live Hardware Waveform](https://kshitij-garg.github.io/#uart) &bull; [Standalone Fullscreen](https://kshitij-garg.github.io/uart-simulator/) |
+| **[Sony BRAVIA 4K Apple TV Launcher](https://github.com/kshitij-garg/sony-bravia-vh2-debloater)** | Android TV, ADB Engine, Web Audio API acoustic taps, Move Mode | [Live TV Simulator](https://kshitij-garg.github.io/#tv) &bull; [Fullscreen App](https://kshitij-garg.github.io/tv-simulator/) |
+| **[QuantRebalance Portfolio Engine](https://github.com/kshitij-garg/quant-rebalance)** | Multi-Asset Covariance Matrix, Risk Parity, Sharpe Ratio, 95% Daily VaR | [Live Rebalance Hub](https://kshitij-garg.github.io/#quant) &bull; [Production App](https://kshitij-garg.github.io/quant-rebalance/) |
+| **[Monitorian 2.0 Display Systems](https://github.com/kshitij-garg/Monitorian-2.0)** | Win32 API, P/Invoke `dxva2.dll`, DDC/CI VCP Opcodes, Instant Blackout | [Live Display Simulator](https://kshitij-garg.github.io/#monitorian) &bull; [Fullscreen App](https://kshitij-garg.github.io/monitorian-simulator/) |
+| **[Hardware UART & SHA-1 Accelerator](https://github.com/kshitij-garg/UART-Verilog)** | Synthesizable Verilog HDL, 16x Oversampling, 80-round SHA-1, 100MHz FPGA | [Live Hardware Waveform](https://kshitij-garg.github.io/#uart) &bull; [Fullscreen App](https://kshitij-garg.github.io/uart-simulator/) |
 
 ---
 
-## 🚀 Key Features
+## ⚡ Features & Capabilities
 
 1. **Sony BRAVIA 4K Apple TV Simulator:**
-   - 16:9 4K TV Frame with Apple TV frosted glass UI.
+   - 16:9 widescreen TV interface with authentic Sony BRAVIA status bar.
    - Realistic tactile sound synthesis via **Web Audio API** (35ms pitch drop from 320Hz to 210Hz with exponential decay).
-   - Fully interactive Sony BRAVIA D-pad remote control (Up, Down, Left, Right, OK, Back, Home, Menu, Move Mode, Sort, Mute).
-   - Working **Move Mode** with tile jiggling (`@keyframes jiggleTile`) and cyan focus glow.
-   - Slide-out **Control Center** with functional **Navigation Sound Mute toggle** (enabled/muted states).
-   - Slashes system RAM from 420MB down to 18MB (95.7% saved) and boot time to 410ms.
+   - Interactive remote control (D-pad Up, Down, Left, Right, OK, Back, Home, Menu, Move Mode, Mute).
+   - Real working in-app interfaces:
+     - **YouTube TV** with 4K video cards
+     - **TV Bro** simulated web browser with address bar and bookmarks
+     - **Aptoide TV** store with interactive install/uninstall simulation
+     - **Settings** with 4K HDR and eARC audio configs
+     - **Spotify** music player overlay
+   - **Move Mode** with tile jiggling (`@keyframes tileJiggle`) and real-time tile swap.
+   - **Control Center** drawer with working sound mute toggle, dark wallpaper switcher, and RAM cleaner.
 
 2. **QuantRebalance Institutional Portfolio Optimizer:**
-   - 6 multi-asset allocation sliders (SPY, QQQ, EEM, TLT, GLD, BTC).
+   - Real-time multi-asset allocation sliders (SPY, QQQ, EEM, TLT, GLD, BTC).
    - Live recalculation of Expected Return, Volatility ($\sigma$), Sharpe Ratio, and 95% Daily Value-at-Risk (VaR).
-   - Real-time HTML5 Canvas asset donut chart.
-   - Presets for Risk Parity (Inverse Volatility), Max Sharpe, Wealth Preservation, and Equal Weight (1/N).
+   - Dynamic HTML5 Canvas asset donut chart.
+   - Strategy presets: Risk Parity (Inverse Volatility), Max Sharpe, Wealth Preservation, and Equal Weight.
 
 3. **Monitorian 2.0 Multi-Monitor Display Systems Simulator:**
    - 3 virtual hardware monitors (32" 4K IPS, 27" Vertical QHD, 24" sRGB Reference).
@@ -52,16 +53,6 @@ Rather than fragmented demos, all major production repositories are unified into
 
 ---
 
-## 🎓 Background & Credentials
-
-- **IIM Kozhikode** &bull; Executive Product Management
-- **IIIT Allahabad** &bull; B.Tech in Electronics & Communication Engineering (ECE)
-- **Agoda (Booking Holdings)** &bull; Lead TPM / PM, Scaled Distributed Supply Engine
-- **Citi (Institutional Clients Group)** &bull; Technical PM, Low-Latency Financial Microservices
-
----
-
-## 📄 License & Distribution
+## 📄 License
 
 - All code in this repository is distributed under the [MIT License](LICENSE).
-- © 2026 Kshitij Garg. All rights reserved.
