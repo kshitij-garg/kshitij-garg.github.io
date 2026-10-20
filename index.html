@@ -1,86 +1,904 @@
-<html>
-	
-	<head>
-		<title>IOT</title>
-		
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="jquery.min.js" type="text/javascript"></script>
-	</head></h1>
-	<body onload="light1()">
-		<div id="head">
-			IoT based Smart Garden Model
-		</div>
-		<div class="head_g">
-			Garden Lights
-		</div>
-		<div id="lit">
-			<div id="btns">
-				<button onclick="light(1)">ON</button>
-				<button onclick="light(0)">OFF</button>
-			</div>
-			<div>
-				<div class="container">
-		    
-				    
-				    <a class="bulb-light">
-				      
-				      	<div id="light"></div>
-				      
-				      	<div id="bulb">
-					        <div class="bulb-top">
-					         	<div class="reflection"></div>
-					        </div>
-					        <div class="bulb-middle-1"></div>
-					        <div class="bulb-middle-2"></div>
-					        <div class="bulb-middle-3"></div>
-					        <div class="bulb-bottom"></div>
-				      	</div>
-				        
-				      	<div id="base">
-					        <div class="screw-top"></div>
-					        <div class="screw-a"></div>
-					        <div class="screw-b"></div>
-					        <div class="screw-a"></div>
-					        <div class="screw-b"></div>
-				        	<div class="screw-a"></div>
-				        	<div class="screw-b"></div>
-				        	<div class="screw-c"></div>
-				        	<div class="screw-d"></div>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-		<!-- <div id="indicator"></div> -->
-		<div class="head_g">
-		Threshold
-		<form name = "Threshold Form" onsubmit="return threshold()" method="get"> <br>
-		<input type="text"  id="threshold_status">
-		<input type="submit" value="submit">
-		</div>
-			
-		<div class="head_g">
-			GRAPHS
-		</div>
-		<div id="graphs">
-			<div>
-			<h1>Humidity Status</h1>
-			<iframe src="http://thingspeak.com/channels/256692/charts/1?dynamic=true"></iframe>
-			</div>
-			<div>
-			<h1>Temperature Status </h1>	
-			<iframe src="http://thingspeak.com/channels/256692/charts/2?dynamic=true"></iframe>
-			</div>
-			<div>
-			<h1>Threshold Status </h1>	
-			<iframe src="http://thingspeak.com/channels/256692/charts/4?dynamic=true"></iframe>		
-			</div>
-		</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kshitij Garg | Lead Technical Project & Product Manager | Executive Portfolio & Live Systems Hub</title>
+  <meta name="description" content="Executive Portfolio of Kshitij Garg - Lead Technical Project & Product Manager. Featuring interactive live applications for Sony BRAVIA 4K Debloater, QuantRebalance Engine, Monitorian 2.0 Display Systems, and Hardware UART/SHA-1 Accelerator.">
+  <meta name="keywords" content="Kshitij Garg, Technical Project Manager, Product Manager, TPM, Sony BRAVIA Debloater, QuantRebalance, Monitorian, Verilog UART, High Concurrency, Agoda, Citi, IIM Kozhikode, IIIT Allahabad">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kshitij-garg.github.io/">
+  <meta property="og:title" content="Kshitij Garg | Lead Technical Project & Product Manager">
+  <meta property="og:description" content="Unified Executive Portfolio & Live Interactive Systems Hub. Experience real client-side simulators engineered with Web Audio API, Web Workers, Canvas, and high-concurrency architectures.">
+  
+  <!-- Favicon & Stylesheet -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22 width=%2232%22 height=%2232%22><text y=%2224%22 font-size=%2222%22>⚡</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-		<div id="footer">
-			ALL RIGHTS RESERVED - KG
-		</div>
-		<script src="redirect.js"></script>
-		
-	</body>
-	</html>
+  <!-- ==========================================================================
+       TOP EXECUTIVE NAVIGATION
+       ========================================================================== -->
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-brand">
+        <div class="brand-avatar">KG</div>
+        <span>Kshitij Garg</span>
+        <div class="nav-status">
+          <span class="status-dot"></span>
+          <span>Available for Lead TPM / PM Roles</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#demos">Live Apps Hub</a></li>
+          <li><a href="#tv-launcher">Sony TV Simulator</a></li>
+          <li><a href="#quant-rebalance">QuantRebalance</a></li>
+          <li><a href="#monitorian">Monitorian 2.0</a></li>
+          <li><a href="#uart">Hardware UART</a></li>
+          <li><a href="#timeline">Career Timeline</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="assets/Kshitij_Garg_Resume.pdf" target="_blank" class="btn btn-secondary btn-sm" download="Kshitij_Garg_Resume.pdf">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Resume (PDF)
+        </a>
+        <a href="https://in.linkedin.com/in/garg-kshitij" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.5 1.5 0 0 0 1.5-1.5 1.5 1.5 0 0 0-1.5-1.5 1.5 1.5 0 0 0-1.5 1.5 1.5 1.5 0 0 0 1.5 1.5m1.39 9.74v-8.37H5.07v8.37h2.78z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==========================================================================
+       HERO & EXECUTIVE INTRODUCTION
+       ========================================================================== -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-pill">
+          <span>🚀 Institutional Product & Systems Leadership</span>
+        </div>
+        <h1 class="hero-title">Kshitij Garg</h1>
+        <h2 class="hero-subtitle">Lead Technical Project & Product Manager | Systems Architecture</h2>
+        <p class="hero-summary">
+          Bridging low-level hardware constraints, distributed high-concurrency microservices, and institutional quantitative systems. Proven track record leading cross-functional engineering squads, eliminating systemic latency, and shipping mission-critical client and server software products.
+        </p>
+
+        <div class="hero-badges">
+          <div class="badge-item">
+            <span>🎓</span>
+            <div><strong>IIM Kozhikode</strong> &bull; Executive Product Mgmt</div>
+          </div>
+          <div class="badge-item">
+            <span>🎓</span>
+            <div><strong>IIIT Allahabad</strong> &bull; B.Tech ECE</div>
+          </div>
+          <div class="badge-item">
+            <span>🏢</span>
+            <div><strong>Agoda (Booking Holdings)</strong> &bull; Scaled Supply Engine</div>
+          </div>
+          <div class="badge-item">
+            <span>🏢</span>
+            <div><strong>Citi (ICG)</strong> &bull; Institutional Microservices</div>
+          </div>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="#demos" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            Explore Unified Live Demos
+          </a>
+          <a href="assets/Kshitij_Garg_Resume.pdf" target="_blank" class="btn btn-secondary" download="Kshitij_Garg_Resume.pdf">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            Download Resume (PDF)
+          </a>
+          <a href="https://github.com/kshitij-garg" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            GitHub Profile
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Metrics KPI Card -->
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <div class="hero-card-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Executive Leadership & Impact Metrics
+          </div>
+          <span class="nav-status">Verified Production</span>
+        </div>
+
+        <div class="hero-stats-grid">
+          <div class="stat-box">
+            <div class="stat-num">300K+</div>
+            <div class="stat-label">Active Users</div>
+            <div class="stat-sub">Enterprise display systems (Monitorian 2.0)</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num emerald">95.7%</div>
+            <div class="stat-label">RAM Saved</div>
+            <div class="stat-sub">Sony BRAVIA 4K Debloater (18MB vs 420MB)</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num indigo">&lt; 2.1 bps</div>
+            <div class="stat-label">Execution Drift</div>
+            <div class="stat-sub">QuantRebalance institutional rebalancing</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num amber">100 MHz</div>
+            <div class="stat-label">FPGA Timing</div>
+            <div class="stat-sub">Zero setup slack hardware SHA-1 pipeline</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       UNIFIED LIVE INTERACTIVE APPS SHOWCASE
+       ========================================================================== -->
+  <section id="demos" class="showcase-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-badge">Live Interactive Demos</div>
+        <h2 class="section-title">One Unified Portal for All Applications</h2>
+        <p class="section-desc">
+          Test and interact with all 4 core production systems directly in your browser. Engineered with native Web Audio API acoustic synthesis, Web Workers, Canvas risk visualizers, and DDC/CI display drivers.
+        </p>
+      </div>
+
+      <!-- App Switcher Tab Bar -->
+      <div class="app-tabs-container">
+        <button class="app-tab-btn active" data-tab="tab-tv" id="btn-tab-tv">
+          <span>📺</span>
+          <span>Sony BRAVIA 4K Apple TV Simulator</span>
+          <span class="tab-badge">v2.4 Live</span>
+        </button>
+        <button class="app-tab-btn" data-tab="tab-quant" id="btn-tab-quant">
+          <span>📊</span>
+          <span>QuantRebalance Institutional Engine</span>
+          <span class="tab-badge">Production</span>
+        </button>
+        <button class="app-tab-btn" data-tab="tab-monitorian" id="btn-tab-monitorian">
+          <span>🖥️</span>
+          <span>Monitorian 2.0 Display Systems</span>
+          <span class="tab-badge">300K+ Users</span>
+        </button>
+        <button class="app-tab-btn" data-tab="tab-uart" id="btn-tab-uart">
+          <span>⚡</span>
+          <span>Hardware UART & SHA-1 Accelerator</span>
+          <span class="tab-badge">Verilog FPGA</span>
+        </button>
+      </div>
+
+
+      <!-- ======================================================================
+           TAB 1: SONY BRAVIA 4K APPLE TV LAUNCHER SIMULATOR
+           ====================================================================== -->
+      <div id="tab-tv" class="app-panel active">
+        <div class="app-panel-header">
+          <div class="app-title-group">
+            <h3>
+              <span>📺</span>
+              <span>Sony BRAVIA 4K Apple TV Launcher & System Simulator</span>
+            </h3>
+            <p>
+              Ultra-lightweight native launcher engineered for Sony BRAVIA 4K Smart TVs. Features Apple TV frosted glass UI, tactile Web Audio acoustic taps (35ms pitch drop), full D-pad remote navigation, interactive Move Mode with tile jiggle, and slide-out Control Center with working Mute toggle.
+            </p>
+          </div>
+          <div class="app-panel-actions">
+            <a href="https://github.com/kshitij-garg/sony-bravia-vh2-debloater/releases/download/v2.4.0/CleanYourTV_v2.4_Aligned.apk" class="btn btn-primary btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download APK (328 KB)
+            </a>
+            <a href="https://github.com/kshitij-garg/sony-bravia-vh2-debloater" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+              View Repository & PRD ↗
+            </a>
+            <a href="tv-simulator/" target="_blank" class="btn btn-secondary btn-sm">
+              Standalone Full-screen ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="simulator-layout-grid">
+          <!-- 16:9 TV Frame -->
+          <div class="tv-simulator-frame">
+            <div class="tv-screen">
+              <!-- TV Top Status Bar -->
+              <div class="tv-status-bar">
+                <div class="tv-status-left">
+                  <span class="tv-pill-badge">4K HDR</span>
+                  <span class="tv-pill-badge">DOLBY ATMOS</span>
+                  <span class="tv-pill-badge" id="tv-sound-badge">Stereo Tap</span>
+                </div>
+                <div class="tv-status-right">
+                  <span id="tv-status-wifi">WiFi 6 &bull; 866 Mbps</span>
+                  <span id="tv-status-clock" style="cursor: pointer; padding: 2px 6px; border-radius: 4px; background: rgba(255,255,255,0.1);">12:45 PM [CC ⚙️]</span>
+                </div>
+              </div>
+
+              <!-- TV Featured Hero Banner -->
+              <div class="tv-hero-banner">
+                <div class="tv-hero-meta">
+                  <div class="tv-hero-tag">FEATURED 4K CINEMATIC</div>
+                  <div class="tv-hero-title">Sony BRAVIA Minimalist Experience</div>
+                </div>
+              </div>
+
+              <!-- TV App Grid Container -->
+              <div class="tv-grid-container">
+                <div class="tv-grid-title">
+                  <span>Installed Applications (D-Pad or Click to Launch)</span>
+                  <span style="font-size: 0.65rem; color: #38bdf8;">RAM: 18MB active</span>
+                </div>
+                <div id="tv-apps-grid" class="tv-apps-row">
+                  <!-- App tiles injected via app.js -->
+                </div>
+              </div>
+
+              <!-- Interactive TV Toast -->
+              <div id="tv-toast" style="position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%) translateY(10px); background: rgba(15,23,42,0.92); border: 1px solid #38bdf8; color: #ffffff; padding: 6px 16px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; opacity: 0; transition: all 0.25s ease; pointer-events: none; z-index: 20; box-shadow: 0 4px 15px rgba(0,0,0,0.6);">
+                Welcome to Sony BRAVIA Apple TV Simulator
+              </div>
+
+              <!-- Slide-Out Control Center Panel -->
+              <div id="tv-control-center" class="tv-control-center">
+                <div class="cc-header">
+                  <h4>Control Center</h4>
+                  <button id="cc-close-btn" class="remote-btn-mini">&times;</button>
+                </div>
+
+                <div class="cc-toggle-item" id="cc-sound-toggle">
+                  <div class="cc-toggle-label">
+                    <span>🔊</span>
+                    <span id="cc-sound-label">Navigation Sound (Enabled)</span>
+                  </div>
+                  <div class="cc-switch active" id="cc-sound-switch"></div>
+                </div>
+
+                <div class="stat-box" style="padding: 0.75rem;">
+                  <div class="stat-num emerald" style="font-size: 1.25rem;">18 MB</div>
+                  <div class="stat-label" style="font-size: 0.68rem;">Active RAM Footprint</div>
+                  <div class="stat-sub" style="font-size: 0.65rem;">OEM: 420 MB (95.7% freed)</div>
+                </div>
+
+                <div class="stat-box" style="padding: 0.75rem;">
+                  <div class="stat-num" style="font-size: 1.25rem;">410 ms</div>
+                  <div class="stat-label" style="font-size: 0.68rem;">Cold Boot Latency</div>
+                  <div class="stat-sub" style="font-size: 0.65rem;">OEM: 4,200 ms (90.2% faster)</div>
+                </div>
+
+                <div style="font-size: 0.7rem; color: #94a3b8; line-height: 1.4;">
+                  Tip: Toggle the Mute switch above or press Mute on the remote to mute tactile wood clicks synthesized via Web Audio API.
+                </div>
+              </div>
+            </div>
+
+            <!-- Bezel Logo -->
+            <div class="tv-bezel-brand">SONY</div>
+            <div class="tv-bezel-indicator"></div>
+          </div>
+
+          <!-- Virtual Remote Control Widget -->
+          <div class="remote-control-widget">
+            <div class="remote-brand">
+              <span>SONY</span>
+              <span style="font-size: 0.55rem; color: #64748b;">BRAVIA RMF-TX500U</span>
+            </div>
+
+            <div class="remote-top-bar">
+              <button class="remote-btn-mini power" id="remote-btn-power" title="TV Standby">⏻</button>
+              <button class="remote-btn-mini" id="remote-btn-mute" title="Mute Audio">🔇</button>
+            </div>
+
+            <!-- D-Pad Directional Wheel -->
+            <div class="remote-dpad">
+              <button class="dpad-btn dpad-up" id="dpad-up" title="Up">▲</button>
+              <button class="dpad-btn dpad-down" id="dpad-down" title="Down">▼</button>
+              <button class="dpad-btn dpad-left" id="dpad-left" title="Left">◀</button>
+              <button class="dpad-btn dpad-right" id="dpad-right" title="Right">▶</button>
+              <button class="dpad-center" id="dpad-center" title="OK / Select">OK</button>
+            </div>
+
+            <!-- Remote Navigation Action Rows -->
+            <div class="remote-row">
+              <button class="remote-btn" id="remote-btn-back">
+                <span>↩</span>
+                <span>BACK</span>
+              </button>
+              <button class="remote-btn" id="remote-btn-home">
+                <span>⌂</span>
+                <span>HOME</span>
+              </button>
+              <button class="remote-btn" id="remote-btn-menu">
+                <span>⚙</span>
+                <span>CC / MENU</span>
+              </button>
+            </div>
+
+            <div class="remote-row">
+              <button class="remote-btn" id="remote-btn-move" title="Toggle Move Mode to rearrange tiles">
+                <span>⇄</span>
+                <span>MOVE MODE</span>
+              </button>
+              <button class="remote-btn" id="remote-btn-sort" title="Sort apps alphabetically">
+                <span>🔤</span>
+                <span>SORT (A-Z)</span>
+              </button>
+            </div>
+
+            <div style="font-size: 0.68rem; color: #64748b; text-align: center; margin-top: 0.25rem;">
+              Keyboard shortcuts: Arrow Keys &bull; Enter &bull; Esc &bull; M (Mute)
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ======================================================================
+           TAB 2: QUANTREBALANCE INSTITUTIONAL ENGINE
+           ====================================================================== -->
+      <div id="tab-quant" class="app-panel">
+        <div class="app-panel-header">
+          <div class="app-title-group">
+            <h3>
+              <span>📊</span>
+              <span>QuantRebalance &bull; Institutional Quantitative Portfolio Engine</span>
+            </h3>
+            <p>
+              Mathematical asset allocation & multi-factor risk rebalancing platform. Adjust target weights to simulate covariance risk, Sharpe optimization, and 95% Daily Value-at-Risk (VaR) in real-time.
+            </p>
+          </div>
+          <div class="app-panel-actions">
+            <a href="https://kshitij-garg.github.io/quant-rebalance/" target="_blank" class="btn btn-primary btn-sm">
+              Launch Full Production Web App ↗
+            </a>
+            <a href="https://github.com/kshitij-garg/quant-rebalance" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+              View Algorithm Docs & Repo ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="quant-dashboard">
+          <!-- Left: Portfolio Sliders & Strategy Selector -->
+          <div class="quant-sliders-card">
+            <div style="font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem; color: #f8fafc;">
+              Optimization Strategy Presets:
+            </div>
+            <div class="quant-strategy-selector">
+              <div class="strategy-chip active" data-strat="risk-parity">Risk Parity (Inverse Vol)</div>
+              <div class="strategy-chip" data-strat="max-sharpe">Max Sharpe / Growth</div>
+              <div class="strategy-chip" data-strat="conservative">Wealth Preservation</div>
+              <div class="strategy-chip" data-strat="equal">Equal Weight (1/N)</div>
+            </div>
+
+            <div style="font-size: 0.82rem; font-weight: 700; margin-bottom: 0.85rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">
+              Asset Allocation Weights:
+            </div>
+
+            <div class="asset-slider-row">
+              <div class="asset-meta">
+                <span class="asset-label"><span style="color:#38bdf8;">■</span> US Equities (SPY) <span class="asset-badge">Large Cap</span></span>
+                <span class="asset-val" id="val-spy">30%</span>
+              </div>
+              <input type="range" class="custom-range" id="slider-spy" min="0" max="100" value="30">
+            </div>
+
+            <div class="asset-slider-row">
+              <div class="asset-meta">
+                <span class="asset-label"><span style="color:#818cf8;">■</span> Tech & Growth (QQQ) <span class="asset-badge">Nasdaq 100</span></span>
+                <span class="asset-val" id="val-qqq">25%</span>
+              </div>
+              <input type="range" class="custom-range" id="slider-qqq" min="0" max="100" value="25">
+            </div>
+
+            <div class="asset-slider-row">
+              <div class="asset-meta">
+                <span class="asset-label"><span style="color:#f59e0b;">■</span> Emerging Markets (EEM) <span class="asset-badge">Global Alpha</span></span>
+                <span class="asset-val" id="val-eem">10%</span>
+              </div>
+              <input type="range" class="custom-range" id="slider-eem" min="0" max="100" value="10">
+            </div>
+
+            <div class="asset-slider-row">
+              <div class="asset-meta">
+                <span class="asset-label"><span style="color:#10b981;">■</span> 20+ Yr US Treasuries (TLT) <span class="asset-badge">Safe Haven</span></span>
+                <span class="asset-val" id="val-tlt">20%</span>
+              </div>
+              <input type="range" class="custom-range" id="slider-tlt" min="0" max="100" value="20">
+            </div>
+
+            <div class="asset-slider-row">
+              <div class="asset-meta">
+                <span class="asset-label"><span style="color:#fbbf24;">■</span> Physical Gold (GLD) <span class="asset-badge">Inflation Hedge</span></span>
+                <span class="asset-val" id="val-gld">10%</span>
+              </div>
+              <input type="range" class="custom-range" id="slider-gld" min="0" max="100" value="10">
+            </div>
+
+            <div class="asset-slider-row">
+              <div class="asset-meta">
+                <span class="asset-label"><span style="color:#a855f7;">■</span> Digital Store of Value (BTC) <span class="asset-badge">Asymmetric</span></span>
+                <span class="asset-val" id="val-btc">5%</span>
+              </div>
+              <input type="range" class="custom-range" id="slider-btc" min="0" max="100" value="5">
+            </div>
+          </div>
+
+          <!-- Right: Donut Chart & Quantitative KPIs -->
+          <div class="quant-metrics-card">
+            <div style="font-size: 0.88rem; font-weight: 700; color: #f8fafc; text-align: center;">
+              Asset Allocation Breakdown
+            </div>
+
+            <div class="chart-wrapper">
+              <canvas id="quant-donut-canvas" style="width: 100%; height: 100%;"></canvas>
+            </div>
+
+            <div class="quant-kpi-grid">
+              <div class="quant-kpi-item">
+                <div class="quant-kpi-num emerald" id="quant-metric-return">10.82%</div>
+                <div class="quant-kpi-label">Expected Annual Return</div>
+              </div>
+              <div class="quant-kpi-item">
+                <div class="quant-kpi-num indigo" id="quant-metric-vol">12.45%</div>
+                <div class="quant-kpi-label">Annualized Volatility (σ)</div>
+              </div>
+              <div class="quant-kpi-item">
+                <div class="quant-kpi-num" id="quant-metric-sharpe">1.48</div>
+                <div class="quant-kpi-label">Sharpe Ratio (Rf=4.5%)</div>
+              </div>
+              <div class="quant-kpi-item">
+                <div class="quant-kpi-num amber" id="quant-metric-var">-1.32%</div>
+                <div class="quant-kpi-label">95% Daily VaR (Parametric)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ======================================================================
+           TAB 3: MONITORIAN 2.0 DISPLAY SYSTEMS
+           ====================================================================== -->
+      <div id="tab-monitorian" class="app-panel">
+        <div class="app-panel-header">
+          <div class="app-title-group">
+            <h3>
+              <span>🖥️</span>
+              <span>Monitorian 2.0 &bull; Windows Multi-Monitor Display Systems Simulator</span>
+            </h3>
+            <p>
+              Enterprise multi-monitor luminance and color orchestration engine. Used by over 300,000 active professionals. Simulates DDC/CI VCP opcode 0x10 brightness, 0x12 contrast, middle-click instant blackout, and circadian solar warmth curves.
+            </p>
+          </div>
+          <div class="app-panel-actions">
+            <a href="https://github.com/kshitij-garg/Monitorian-2.0" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+              View Repository & Win32 Docs ↗
+            </a>
+            <a href="monitorian-simulator/" target="_blank" class="btn btn-secondary btn-sm">
+              Standalone Full-screen ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Multi-Monitor Hardware Array -->
+        <div class="monitor-array" id="monitor-array-container">
+          <!-- Monitor 1: 32" 4K Landscape -->
+          <div class="virtual-monitor">
+            <div class="monitor-screen-box screen-landscape-lg">
+              <div class="monitor-inner-visual" id="screen-mon-1" style="background: radial-gradient(circle at 50% 30%, #1e3a8a, #090d16);">
+                <div class="monitor-label-tag"><span>💻</span> Display 1 (32" 4K UHD)</div>
+                <div class="monitor-status-nit" id="mon-val-1">75% (285 nits)</div>
+                <div style="font-size: 0.55rem; color: #94a3b8;">VCP 0x10 &bull; DDC/CI 0x37</div>
+              </div>
+            </div>
+            <div class="monitor-stand"></div>
+            <div class="monitor-base"></div>
+          </div>
+
+          <!-- Monitor 2: 27" Vertical Coding -->
+          <div class="virtual-monitor">
+            <div class="monitor-screen-box screen-portrait">
+              <div class="monitor-inner-visual" id="screen-mon-2" style="background: radial-gradient(circle at 50% 30%, #312e81, #090d16);">
+                <div class="monitor-label-tag"><span>📜</span> Display 2 (27" Vertical)</div>
+                <div class="monitor-status-nit" id="mon-val-2">60% (228 nits)</div>
+                <div style="font-size: 0.55rem; color: #94a3b8;">VCP 0x10</div>
+              </div>
+            </div>
+            <div class="monitor-stand"></div>
+            <div class="monitor-base"></div>
+          </div>
+
+          <!-- Monitor 3: 24" Studio Reference -->
+          <div class="virtual-monitor">
+            <div class="monitor-screen-box screen-landscape-sm">
+              <div class="monitor-inner-visual" id="screen-mon-3" style="background: radial-gradient(circle at 50% 30%, #064e3b, #090d16);">
+                <div class="monitor-label-tag"><span>🎨</span> Display 3 (24" sRGB)</div>
+                <div class="monitor-status-nit" id="mon-val-3">80% (304 nits)</div>
+                <div style="font-size: 0.55rem; color: #94a3b8;">VCP 0x10</div>
+              </div>
+            </div>
+            <div class="monitor-stand"></div>
+            <div class="monitor-base"></div>
+          </div>
+        </div>
+
+        <!-- Controls & Embedded CLI Terminal -->
+        <div class="simulator-layout-grid">
+          <!-- Monitorian Controls Card -->
+          <div class="stat-box" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 700; font-size: 0.95rem;">Display Luminance Sliders</span>
+              <button id="btn-blackout-toggle" class="btn btn-secondary btn-sm">
+                🌙 Middle-Click Instant Blackout
+              </button>
+            </div>
+
+            <div class="asset-slider-row">
+              <div class="asset-meta">
+                <span class="asset-label">Display 1 (32" 4K IPS)</span>
+                <span class="asset-val" id="disp-slider-val-1">VCP 0x10</span>
+              </div>
+              <input type="range" class="custom-range" id="mon-slider-1" min="0" max="100" value="75">
+            </div>
+
+            <div class="asset-slider-row">
+              <div class="asset-meta">
+                <span class="asset-label">Display 2 (27" Vertical QHD)</span>
+                <span class="asset-val" id="disp-slider-val-2">VCP 0x10</span>
+              </div>
+              <input type="range" class="custom-range" id="mon-slider-2" min="0" max="100" value="60">
+            </div>
+
+            <div class="asset-slider-row">
+              <div class="asset-meta">
+                <span class="asset-label">Display 3 (24" sRGB Reference)</span>
+                <span class="asset-val" id="disp-slider-val-3">VCP 0x10</span>
+              </div>
+              <input type="range" class="custom-range" id="mon-slider-3" min="0" max="100" value="80">
+            </div>
+
+            <div class="cc-toggle-item" id="mon-sync-toggle-row">
+              <div class="cc-toggle-label">
+                <span>🔗</span>
+                <span>Unify & Gang All Display Sliders</span>
+              </div>
+              <div class="cc-switch" id="mon-sync-switch"></div>
+            </div>
+
+            <div class="asset-slider-row">
+              <div class="asset-meta">
+                <span class="asset-label">Circadian Solar Warmth</span>
+                <span class="asset-val" id="val-circadian">6500K</span>
+              </div>
+              <input type="range" class="custom-range" id="slider-circadian" min="2700" max="6500" value="6500" step="100">
+            </div>
+          </div>
+
+          <!-- Embedded DDC/CI CLI Console -->
+          <div class="monitorian-cli-box">
+            <div class="cli-history" id="monitorian-cli-history">
+              <div class="cli-line success">Monitorian 2.0 DDC/CI VCP Engine Initialized.</div>
+              <div class="cli-line info">P/Invoke dxva2.dll loaded. 3 physical displays attached.</div>
+              <div class="cli-line">Type "help" to view available terminal commands.</div>
+            </div>
+            <div class="cli-input-row">
+              <span class="cli-prompt">DDC/CI&gt;</span>
+              <input type="text" id="monitorian-cli-input" class="cli-input" placeholder="e.g. status, set 1 85, blackout, benchmark">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ======================================================================
+           TAB 4: HARDWARE UART & SHA-1 ACCELERATOR
+           ====================================================================== -->
+      <div id="tab-uart" class="app-panel">
+        <div class="app-panel-header">
+          <div class="app-title-group">
+            <h3>
+              <span>⚡</span>
+              <span>Hardware UART & SHA-1 Cryptographic Accelerator Visualizer</span>
+            </h3>
+            <p>
+              Synthesizable Verilog HDL hardware core designed for FPGA / ASIC integration. Features a 16x oversampled UART transceiver linked directly to an 80-round pipelined SHA-1 hashing coprocessor running at 100 MHz.
+            </p>
+          </div>
+          <div class="app-panel-actions">
+            <a href="https://github.com/kshitij-garg/UART-Verilog" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+              View Verilog HDL Source & Testbenches ↗
+            </a>
+            <a href="uart-simulator/" target="_blank" class="btn btn-secondary btn-sm">
+              Standalone Full-screen ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="uart-canvas-container">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.75rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="font-weight: 700; font-size: 0.88rem;">Oscilloscope Digital Waveform (Physical RS-232 Bitstream)</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <input type="text" id="uart-input-msg" value="KSHITIJ_TPM_2026" style="background: rgba(255,255,255,0.08); border: 1px solid var(--border-subtle); color: #ffffff; padding: 4px 8px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.8rem; width: 160px;">
+              <select id="uart-baud-select" style="background: #1e293b; color: #ffffff; border: 1px solid var(--border-subtle); padding: 4px 6px; border-radius: 4px; font-size: 0.78rem;">
+                <option value="9600">9600 Baud</option>
+                <option value="115200" selected>115200 Baud</option>
+                <option value="921600">921600 Baud</option>
+              </select>
+              <select id="uart-parity-select" style="background: #1e293b; color: #ffffff; border: 1px solid var(--border-subtle); padding: 4px 6px; border-radius: 4px; font-size: 0.78rem;">
+                <option value="None" selected>Parity: None</option>
+                <option value="Even">Parity: Even</option>
+                <option value="Odd">Parity: Odd</option>
+              </select>
+            </div>
+          </div>
+
+          <canvas id="uart-waveform-canvas" class="waveform-canvas"></canvas>
+        </div>
+
+        <!-- Finite State Machine (FSM) Flow -->
+        <div style="margin-top: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.85rem; font-weight: 700;">UART RX Finite State Machine (FSM) & Clock Tracker</span>
+            <button id="btn-fsm-step" class="btn btn-primary btn-sm">CLK Step (Next State) ▶</button>
+          </div>
+
+          <div class="fsm-state-flow">
+            <div class="fsm-node active-state">IDLE</div>
+            <span class="fsm-arrow">➔</span>
+            <div class="fsm-node">START_DETECT</div>
+            <span class="fsm-arrow">➔</span>
+            <div class="fsm-node">SAMPLE_MID</div>
+            <span class="fsm-arrow">➔</span>
+            <div class="fsm-node">DESERIALIZE</div>
+            <span class="fsm-arrow">➔</span>
+            <div class="fsm-node">PARITY_CHECK</div>
+            <span class="fsm-arrow">➔</span>
+            <div class="fsm-node">FIFO_WRITE</div>
+            <span class="fsm-arrow">➔</span>
+            <div class="fsm-node">DONE</div>
+          </div>
+          <div id="fsm-state-desc" style="font-family: var(--font-mono); font-size: 0.75rem; color: #38bdf8; margin-top: 0.35rem;">
+            IDLE: RX line high, waiting for falling edge on start bit
+          </div>
+        </div>
+
+        <!-- Real-Time SHA-1 Cryptographic Pipeline -->
+        <div style="margin-top: 2rem; background: rgba(15,23,42,0.4); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="font-size: 0.95rem; font-weight: 700;">SHA-1 Cryptographic Pipeline (Live 160-bit Hardware Digest)</span>
+            <span style="font-size: 0.75rem; color: #10b981; font-family: var(--font-mono);">Clock: 100 MHz &bull; 82 Cycles/Block &bull; 622 Mbps</span>
+          </div>
+
+          <div class="sha-register-grid">
+            <div class="sha-reg-box">
+              <div class="reg-label">REG A (32-bit)</div>
+              <div class="reg-val" id="sha-reg-a">0x67452301</div>
+            </div>
+            <div class="sha-reg-box">
+              <div class="reg-label">REG B (32-bit)</div>
+              <div class="reg-val" id="sha-reg-b">0xefcdab89</div>
+            </div>
+            <div class="sha-reg-box">
+              <div class="reg-label">REG C (32-bit)</div>
+              <div class="reg-val" id="sha-reg-c">0x98badcfe</div>
+            </div>
+            <div class="sha-reg-box">
+              <div class="reg-label">REG D (32-bit)</div>
+              <div class="reg-val" id="sha-reg-d">0x10325476</div>
+            </div>
+            <div class="sha-reg-box">
+              <div class="reg-label">REG E (32-bit)</div>
+              <div class="reg-val" id="sha-reg-e">0xc3d2e1f0</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 1rem; padding: 0.85rem; background: #030712; border-radius: 4px; border: 1px solid var(--border-subtle);">
+            <div style="font-size: 0.7rem; color: #94a3b8; text-transform: uppercase;">160-bit SHA-1 Hexadecimal Digest Output:</div>
+            <div id="sha-full-digest" style="font-family: var(--font-mono); font-size: 0.88rem; color: #38bdf8; font-weight: 700; word-break: break-all; margin-top: 0.25rem;">
+              Computing...
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       CHRONOLOGICAL PROJECT & CAREER TIMELINE
+       ========================================================================== -->
+  <section id="timeline" class="timeline-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-badge">Career & Project Evolution</div>
+        <h2 class="section-title">Chronological Engineering & Leadership Timeline</h2>
+        <p class="section-desc">
+          Milestones across high-throughput distributed systems, institutional financial platforms, open-source utilities, and hardware accelerators.
+        </p>
+      </div>
+
+      <div class="timeline-track">
+        <!-- Item 1: Agoda -->
+        <div class="timeline-item">
+          <div class="timeline-marker">🏢</div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <div class="timeline-role">Lead Technical Project & Product Manager &bull; <span class="timeline-company">Agoda (Booking Holdings)</span></div>
+              <div class="timeline-date">2023 &ndash; Present</div>
+            </div>
+            <p class="timeline-desc">
+              Spearheaded distributed high-concurrency supply architecture and cross-border booking pipelines. Led squads across Bangkok and Singapore optimizing microservice latency, high-volume inventory availability, and distributed cache hit rates under massive global query loads.
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">High Concurrency</span>
+              <span class="timeline-tag">Distributed Systems</span>
+              <span class="timeline-tag">Microservices</span>
+              <span class="timeline-tag">TPM Leadership</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: QuantRebalance -->
+        <div class="timeline-item">
+          <div class="timeline-marker">📊</div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <div class="timeline-role">Founder & Lead PM &bull; <span class="timeline-company">QuantRebalance Intelligence Engine</span></div>
+              <div class="timeline-date">2024 &ndash; 2026</div>
+            </div>
+            <p class="timeline-desc">
+              Designed institutional portfolio optimization and multi-asset rebalancing platform. Engineered automated risk-parity allocations, Black-Litterman drift minimization, and client-side execution analytics achieving &lt;2.1 bps transaction slippage.
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Quantitative Finance</span>
+              <span class="timeline-tag">Risk Parity</span>
+              <span class="timeline-tag">Mean-Variance Optimization</span>
+              <span class="timeline-tag">Web Workers</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Sony Bravia Debloater -->
+        <div class="timeline-item">
+          <div class="timeline-marker">📺</div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <div class="timeline-role">Lead Systems Architect & PM &bull; <span class="timeline-company">Sony BRAVIA 4K Debloater & Launcher</span></div>
+              <div class="timeline-date">2024 &ndash; 2026</div>
+            </div>
+            <p class="timeline-desc">
+              Architected ultra-lightweight Apple TV minimalist launcher for Sony BRAVIA Android TV (VH2/X90H). Slashed OS memory consumption from 420MB down to 18MB (95.7% freed), reduced cold boot latency to 410ms, and packaged into a 328KB zero-overhead APK with Web Audio acoustic synthesis and remote Move Mode.
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Android TV OS</span>
+              <span class="timeline-tag">ADB Automation</span>
+              <span class="timeline-tag">Web Audio API</span>
+              <span class="timeline-tag">Memory Profiling</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: Monitorian 2.0 -->
+        <div class="timeline-item">
+          <div class="timeline-marker">🖥️</div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <div class="timeline-role">Open Source Lead & Product Manager &bull; <span class="timeline-company">Monitorian 2.0 Display Systems</span></div>
+              <div class="timeline-date">2023 &ndash; 2025</div>
+            </div>
+            <p class="timeline-desc">
+              Scaled Windows multi-monitor DDC/CI luminance control engine to 300,000+ active enterprise workstations. Implemented P/Invoke dxva2.dll low-level I2C VCP opcode drivers, proportional display sync, middle-click instant blackout, and solar circadian tracking.
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Win32 API</span>
+              <span class="timeline-tag">DDC/CI VCP</span>
+              <span class="timeline-tag">WPF / C# 12</span>
+              <span class="timeline-tag">300K+ Users</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5: Citi -->
+        <div class="timeline-item">
+          <div class="timeline-marker">🏦</div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <div class="timeline-role">Technical Project Manager / Specialist &bull; <span class="timeline-company">Citi (Institutional Clients Group)</span></div>
+              <div class="timeline-date">2021 &ndash; 2023</div>
+            </div>
+            <p class="timeline-desc">
+              Delivered enterprise microservices and real-time transaction pipelines for institutional trading clients. Led sprint ceremonies, managed cross-regional engineering stakeholders, and ensured zero-downtime deployments under strict regulatory and SOC2 compliance.
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Institutional Banking</span>
+              <span class="timeline-tag">FinTech Infrastructure</span>
+              <span class="timeline-tag">Agile / Scrum</span>
+              <span class="timeline-tag">SOC2 & Compliance</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6: UART FPGA -->
+        <div class="timeline-item">
+          <div class="timeline-marker">⚡</div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <div class="timeline-role">Hardware Systems Researcher &bull; <span class="timeline-company">IIIT Allahabad Hardware Research</span></div>
+              <div class="timeline-date">2020 &ndash; 2021</div>
+            </div>
+            <p class="timeline-desc">
+              Designed synthesizable Verilog HDL UART transceiver coupled to an 80-round SHA-1 cryptographic acceleration engine. Achieved 100 MHz timing closure with zero slack on Xilinx Artix-7 FPGAs and 622 Mbps throughput.
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Verilog HDL</span>
+              <span class="timeline-tag">FPGA Synthesis</span>
+              <span class="timeline-tag">Cryptography</span>
+              <span class="timeline-tag">Timing Closure</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 7: Education -->
+        <div class="timeline-item">
+          <div class="timeline-marker">🎓</div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <div class="timeline-role">Academic Degrees & Professional Certifications</div>
+              <div class="timeline-date">2017 &ndash; 2022</div>
+            </div>
+            <p class="timeline-desc">
+              <strong>Indian Institute of Management Kozhikode (IIMK)</strong> &bull; Executive Product Management<br>
+              <strong>Indian Institute of Information Technology Allahabad (IIIT-A)</strong> &bull; B.Tech in Electronics and Communication Engineering (ECE)
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">IIM Kozhikode</span>
+              <span class="timeline-tag">IIIT Allahabad</span>
+              <span class="timeline-tag">Systems Engineering</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div style="font-weight: 700; color: #f8fafc; font-size: 1rem;">Kshitij Garg</div>
+        <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.2rem;">
+          Lead Technical Project & Product Manager &bull; Open for Strategic Roles
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://in.linkedin.com/in/garg-kshitij" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/kshitij-garg" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="assets/Kshitij_Garg_Resume.pdf" target="_blank" download="Kshitij_Garg_Resume.pdf">Resume (PDF)</a>
+        <a href="mailto:garg.kshitij@alumni.iimk.ac.in">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

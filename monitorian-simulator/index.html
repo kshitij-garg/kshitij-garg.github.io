@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitorian 2.0 Display Systems Simulator | Kshitij Garg</title>
+  <meta name="description" content="Windows Multi-Monitor DDC/CI Display Control Systems Engine browser simulator. Sliders, middle-click instant blackout, and CLI terminal.">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body {
+      padding-top: 2rem;
+      background: radial-gradient(circle at 50% 20%, #064e3b 0%, #07090e 80%);
+    }
+    .back-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding: 0.75rem 1.25rem;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container" style="max-width: 1200px;">
+    <div class="back-bar">
+      <a href="../#monitorian" style="font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+        <span>←</span> Back to Unified Executive Portfolio Hub
+      </a>
+      <div style="font-size: 0.85rem; color: #94a3b8;">
+        Monitorian 2.0 &bull; Windows Multi-Monitor DDC/CI Systems Simulator
+      </div>
+    </div>
+
+    <!-- Active Monitorian Panel -->
+    <div id="tab-monitorian" class="app-panel active" style="display: block;">
+      <div class="app-panel-header">
+        <div class="app-title-group">
+          <h3>
+            <span>🖥️</span>
+            <span>Monitorian 2.0 &bull; Multi-Monitor Display Systems Simulator</span>
+          </h3>
+          <p>
+            Enterprise multi-monitor luminance and color orchestration engine. Used by over 300,000 active professionals. Simulates DDC/CI VCP opcode 0x10 brightness, 0x12 contrast, middle-click instant blackout, and circadian solar warmth curves.
+          </p>
+        </div>
+        <div class="app-panel-actions">
+          <a href="https://github.com/kshitij-garg/Monitorian-2.0" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+            View Repository & Win32 Docs ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Multi-Monitor Hardware Array -->
+      <div class="monitor-array" id="monitor-array-container">
+        <!-- Monitor 1: 32" 4K Landscape -->
+        <div class="virtual-monitor">
+          <div class="monitor-screen-box screen-landscape-lg">
+            <div class="monitor-inner-visual" id="screen-mon-1" style="background: radial-gradient(circle at 50% 30%, #1e3a8a, #090d16);">
+              <div class="monitor-label-tag"><span>💻</span> Display 1 (32" 4K UHD)</div>
+              <div class="monitor-status-nit" id="mon-val-1">75% (285 nits)</div>
+              <div style="font-size: 0.55rem; color: #94a3b8;">VCP 0x10 &bull; DDC/CI 0x37</div>
+            </div>
+          </div>
+          <div class="monitor-stand"></div>
+          <div class="monitor-base"></div>
+        </div>
+
+        <!-- Monitor 2: 27" Vertical Coding -->
+        <div class="virtual-monitor">
+          <div class="monitor-screen-box screen-portrait">
+            <div class="monitor-inner-visual" id="screen-mon-2" style="background: radial-gradient(circle at 50% 30%, #312e81, #090d16);">
+              <div class="monitor-label-tag"><span>📜</span> Display 2 (27" Vertical)</div>
+              <div class="monitor-status-nit" id="mon-val-2">60% (228 nits)</div>
+              <div style="font-size: 0.55rem; color: #94a3b8;">VCP 0x10</div>
+            </div>
+          </div>
+          <div class="monitor-stand"></div>
+          <div class="monitor-base"></div>
+        </div>
+
+        <!-- Monitor 3: 24" Studio Reference -->
+        <div class="virtual-monitor">
+          <div class="monitor-screen-box screen-landscape-sm">
+            <div class="monitor-inner-visual" id="screen-mon-3" style="background: radial-gradient(circle at 50% 30%, #064e3b, #090d16);">
+              <div class="monitor-label-tag"><span>🎨</span> Display 3 (24" sRGB)</div>
+              <div class="monitor-status-nit" id="mon-val-3">80% (304 nits)</div>
+              <div style="font-size: 0.55rem; color: #94a3b8;">VCP 0x10</div>
+            </div>
+          </div>
+          <div class="monitor-stand"></div>
+          <div class="monitor-base"></div>
+        </div>
+      </div>
+
+      <!-- Controls & Embedded CLI Terminal -->
+      <div class="simulator-layout-grid">
+        <div class="stat-box" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-weight: 700; font-size: 0.95rem;">Display Luminance Sliders</span>
+            <button id="btn-blackout-toggle" class="btn btn-secondary btn-sm">
+              🌙 Middle-Click Instant Blackout
+            </button>
+          </div>
+
+          <div class="asset-slider-row">
+            <div class="asset-meta">
+              <span class="asset-label">Display 1 (32" 4K IPS)</span>
+              <span class="asset-val">VCP 0x10</span>
+            </div>
+            <input type="range" class="custom-range" id="mon-slider-1" min="0" max="100" value="75">
+          </div>
+
+          <div class="asset-slider-row">
+            <div class="asset-meta">
+              <span class="asset-label">Display 2 (27" Vertical QHD)</span>
+              <span class="asset-val">VCP 0x10</span>
+            </div>
+            <input type="range" class="custom-range" id="mon-slider-2" min="0" max="100" value="60">
+          </div>
+
+          <div class="asset-slider-row">
+            <div class="asset-meta">
+              <span class="asset-label">Display 3 (24" sRGB Reference)</span>
+              <span class="asset-val">VCP 0x10</span>
+            </div>
+            <input type="range" class="custom-range" id="mon-slider-3" min="0" max="100" value="80">
+          </div>
+
+          <div class="cc-toggle-item" id="mon-sync-toggle-row">
+            <div class="cc-toggle-label">
+              <span>🔗</span>
+              <span>Unify & Gang All Display Sliders</span>
+            </div>
+            <div class="cc-switch" id="mon-sync-switch"></div>
+          </div>
+
+          <div class="asset-slider-row">
+            <div class="asset-meta">
+              <span class="asset-label">Circadian Solar Warmth</span>
+              <span class="asset-val" id="val-circadian">6500K</span>
+            </div>
+            <input type="range" class="custom-range" id="slider-circadian" min="2700" max="6500" value="6500" step="100">
+          </div>
+        </div>
+
+        <div class="monitorian-cli-box">
+          <div class="cli-history" id="monitorian-cli-history">
+            <div class="cli-line success">Monitorian 2.0 DDC/CI VCP Engine Initialized.</div>
+            <div class="cli-line info">P/Invoke dxva2.dll loaded. 3 physical displays attached.</div>
+            <div class="cli-line">Type "help" to view available terminal commands.</div>
+          </div>
+          <div class="cli-input-row">
+            <span class="cli-prompt">DDC/CI&gt;</span>
+            <input type="text" id="monitorian-cli-input" class="cli-input" placeholder="e.g. status, set 1 85, blackout, benchmark">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>
